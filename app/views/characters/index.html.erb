@@ -2,7 +2,7 @@
 
 <ul>
   <% @characters.each do |character| %>
-    <li><%= character.name %></li>
+    <li><a href="/characters/<%= character.id %>"><%= character.name %></a></li>
       <ul>
         <li>House <%= character.house %></li>
         <li>From <%= character.city %></li>

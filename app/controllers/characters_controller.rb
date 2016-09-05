@@ -42,4 +42,9 @@ class CharactersController < ApplicationController
     redirect_to "/characters/#{@character["id"]}"
   end
 
+  def destroy
+    @character = Unirest.delete("http://localhost:3000/api/v1/characters/#{params[:id]}.json").body
+    redirect_to "/characters"
+  end
+
 end
